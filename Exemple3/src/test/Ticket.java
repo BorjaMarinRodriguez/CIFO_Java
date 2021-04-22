@@ -25,48 +25,51 @@ public class Ticket {
 		System.out.println("User Type: " + userType );
 		System.out.println("User Buy: " + userBuy );
 		
+		int discount = 0;
+		int totalDiscount = 0;
+		int amountToPay = 0;
+		
 		if (userType.equals("vip")) {
 			//scope number #3
-			
-			
+			discount = 25;
+			totalDiscount = userBuy * 25 / 100;;
+			amountToPay = userBuy - totalDiscount;
 			// i have to code 25% discount
 			//and print it to screen
-			System.out.println("\nTicket:");
-			System.out.println("-------------------------\n");
-			System.out.println("The amount of your buy is: " + userBuy );
-			System.out.println("Your discount is: " + "25%" );
-			System.out.println("Your total discout is: " + userBuy * 25 / 100 );
-			System.out.println("Your should pay: " + (userBuy - (userBuy * 25 /100))  );
-			
+		
 			
 			}else if (userType.equals("regular")) {
 				// i have to code 15% discount
+				discount = 15;
+				totalDiscount = userBuy * 15 / 100;;
+				amountToPay = userBuy - totalDiscount;
+				// i have to code 25% discount
 				//and print it to screen
-				System.out.println("\nTicket:");
-				System.out.println("-------------------------\n");
-				System.out.println("The amount of your buy is: " + userBuy );
-				System.out.println("Your discount is: " + "15%" );
-				System.out.println("Your total discout is: " + userBuy * 15 / 100 );
-				System.out.println("Your should pay: " + (userBuy - (userBuy * 15 /100))  );
-				
-			
+
 			}else if (userType.equals("new")) {
 				// i have to code 0% discount
 				//and print it to screen
-				System.out.println("\nTicket:");
-				System.out.println("-------------------------\n");
-				System.out.println("The amount of your buy is: " + userBuy );
-				System.out.println("Your discount is: " + "0%" );
-				System.out.println("Your total discout is: 0 ");
-				System.out.println("Your should pay: 0 " );
+				discount = 0;
+				totalDiscount = userBuy * 0 / 100;;
+				amountToPay = userBuy - totalDiscount;
 		
 	}
+		
 		
 		
 		else {
 			//scope number #4
 			System.out.println(userName + " enter a customer type");
 		}
+		
+		System.out.println("\nTicket:");
+		System.out.println("-------------------------\n");
+		System.out.println("The amount of your buy is: " + userBuy);
+		System.out.println("Your discount is: " + discount);
+		System.out.println("Your total discount is: " + totalDiscount);
+		System.out.println("Your should pay (with the discount): " + amountToPay + "\n");
+
+		// I am closing the while so also the while scope
 		
 	}
 	}
