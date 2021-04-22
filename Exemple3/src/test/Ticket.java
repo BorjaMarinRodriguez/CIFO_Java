@@ -6,7 +6,11 @@ public class Ticket {
 	
 	public static void main (String[] args) {
 		
-	while(true){
+		int discount = 0;
+		int totalDiscount = 0;
+		int amountToPay = 0;
+		
+		while(true){
 		
 	
 		Scanner reader = new Scanner (System.in);
@@ -25,9 +29,7 @@ public class Ticket {
 		System.out.println("User Type: " + userType );
 		System.out.println("User Buy: " + userBuy );
 		
-		int discount = 0;
-		int totalDiscount = 0;
-		int amountToPay = 0;
+	
 		
 		if (userType.equals("vip")) {
 			//scope number #3
