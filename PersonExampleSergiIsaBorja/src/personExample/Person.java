@@ -49,6 +49,21 @@ public class Person {
 		this.tobaccoPacket = tobaccoPacket;
 		
 	}
+	
+	
+
+	public Person(String name, int age, int weigth, int heigth, double basicSalary, double money, int tobaccoPacket,
+			ArrayList<Expense> expenses) {
+		
+		this.name = name;
+		this.age = age;
+		this.weigth = weigth;
+		this.heigth = heigth;
+		this.basicSalary = basicSalary;
+		this.money = money;
+		this.tobaccoPacket = tobaccoPacket;
+		this.expenses = expenses;
+	}
 
 	//Methods from Person Class
 	
