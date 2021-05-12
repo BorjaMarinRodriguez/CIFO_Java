@@ -1,5 +1,7 @@
 package personExample;
 
+import java.util.ArrayList;
+
 public class Person {
 
 	//fields from Person Class
@@ -11,6 +13,7 @@ public class Person {
 	// Creem les dues variables necessàries 
 	public double money;
 	public int tobaccoPacket;
+	public ArrayList<Expense> expenses;
 	
 	
 	//Constructor from Person Class
@@ -25,7 +28,9 @@ public class Person {
 		this.weigth = weigth;
 		this.heigth = heigth;
 		this.basicSalary = basicSalary;
-		double yearNetSalary = 0.0;
+		this.expenses = new ArrayList<Expense>();
+		//double yearNetSalary = 0.0;
+		
 		
 	}
 
@@ -52,14 +57,43 @@ public class Person {
 		this.age = age + 1;
 	}
 	
-	/*
-	 * public double yearNetSalary (double basicSalary) {
-	 * 
-	 * 
-	 * return this.yearNetSalary;
-	 * 
-	 * }
-	 */
+	public double yearNetSalary() {
+
+		double yearNetSalary = 0.0;
+
+		// first i must check weather THIS object have got money
+		// this.basicSalary > 1
+		if (this.basicSalary > 1) {
+
+			yearNetSalary = this.basicSalary * 14;
+
+			if (this.age > 30) {
+				yearNetSalary = yearNetSalary * 0.88;
+			} else {
+				yearNetSalary = yearNetSalary * 0.94;
+			}
+
+		} else {
+			System.out.println(name + " has not got any salary, so YearNetSalary not available!");
+		}
+
+		return yearNetSalary;
+	}
+	
+public double calculateExpenses (int month) {
+		
+		double expensesMonth = 0.0;
+		
+		for (Expense expense : this.expenses) {
+			
+			if (expense.getDate().getMonth() ==  month ) 
+				expensesMonth = expensesMonth + expense.getValue();
+			
+		}
+		
+		
+		return expensesMonth;
+	}
 	
 	public boolean isAdult(int age) {
 		
@@ -94,6 +128,8 @@ public class Person {
 		System.out.println("No puc fumar");
 			return false;
 	}
+	
+	
 	
 	
 	//Getters and Setters and toString	
