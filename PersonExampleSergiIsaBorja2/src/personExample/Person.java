@@ -14,6 +14,7 @@ public class Person {
 	public double money;
 	public int tobaccoPacket;
 	public ArrayList<Expense> expenses;
+	public ArrayList<Displacement> displacements;
 	
 	
 	//Constructor from Person Class
@@ -49,8 +50,31 @@ public class Person {
 		this.tobaccoPacket = tobaccoPacket;
 		
 	}
+	
+	
+
+	public Person(String name, int age, int weigth, int heigth, double basicSalary, double money, int tobaccoPacket,
+			ArrayList<Expense> expenses, ArrayList<Displacement> displacements) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.weigth = weigth;
+		this.heigth = heigth;
+		this.basicSalary = basicSalary;
+		this.money = money;
+		this.tobaccoPacket = tobaccoPacket;
+		this.expenses = expenses;
+		this.displacements = new ArrayList<Displacement>();
+	}
 
 	//Methods from Person Class
+	
+	
+	public void addDisplacement(Displacement displacement) {
+		
+		displacements.add(displacement);
+		
+	}
 	
 	public void becomeOlder () {
 		
@@ -129,7 +153,7 @@ public double calculateExpenses (int month) {
 			return false;
 	}
 	
-	public Location displace( Location init, Location finish) {
+	public Location actualyLocation (Location finish) {
 		System.out.println("Vosté està aquì" + finish.getName());
 		return finish;
 	}

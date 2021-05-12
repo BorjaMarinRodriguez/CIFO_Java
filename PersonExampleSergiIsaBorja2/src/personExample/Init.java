@@ -5,7 +5,7 @@ public class Init {
 	public static void main(String[] args) {
 		
 		
-		//TestPerson.executePerson();
+		TestPerson.executePerson();
 		TestDog.executeDog();
 		TestLocation.executeLocation();
 		

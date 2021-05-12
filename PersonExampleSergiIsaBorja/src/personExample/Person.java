@@ -16,6 +16,7 @@ public class Person {
 	public ArrayList<Expense> expenses;
 	
 	
+	
 	//Constructor from Person Class
 	public Person() {
 		
