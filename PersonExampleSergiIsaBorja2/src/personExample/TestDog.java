@@ -18,6 +18,11 @@ public class TestDog {
 		
 		Dog dog2 = new Dog("Noa", 4, 15, "Creuat", false);
 		
+		Person isa = new Person("Isa", 28);
+		
+		Location location1 = new Location("House", 123154, 132103);
+		
+		Location location2 = new Location("Park", 45416, 15564);
 	
 
 		
@@ -35,7 +40,16 @@ public class TestDog {
 		
 		System.out.println(dog2);
 		
+		dog1.bark();
+		dog1.toWalk(location1, location2);
+		dog1.attackDog(dog2, isa);
 		
+		
+		
+		
+	
+	
+	
 	}
 
 }

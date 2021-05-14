@@ -7,7 +7,7 @@ public class MyDate {
 	public int year;
 	
 	public MyDate() {
-		super();
+		
 	}
 
 

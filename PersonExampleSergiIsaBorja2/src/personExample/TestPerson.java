@@ -7,6 +7,8 @@ public class TestPerson {
 	public static void executePerson() {
 
 		createAndTestObjectsPerson();
+		testExpensesPerson();
+		testDisplacementPerson();
 
 	}
 
@@ -19,10 +21,12 @@ public class TestPerson {
 		
 		Person toni = new Person ("Antonio", 30, 80, 180, 2000);
 		
-		Person borja = new Person ("Borja",18, 15,0 );
+		Person carles = new Person ("Borja",18, 15,0 );
 		
-		borja.toString();
-		System.out.println(borja);
+		Person borja2 = new Person ("Borja",18, 15,0 );
+		
+		carles.toString();
+		System.out.println(carles);
 		
 //		borja.isAdult(15);
 //		borja.isAdult(18);
@@ -33,8 +37,8 @@ public class TestPerson {
 //		borja.smoking(1);
 //		borja.smoking(0);
 		
-		borja.smoking();
-		borja.tobaccoBuy(1);
+		borja2.smoking();
+		borja2.tobaccoBuy(1);
 		
 		// an object with just a pair of parameters: name and age
 		
@@ -67,7 +71,11 @@ public class TestPerson {
 		toni.becomeOlder();
 
 		System.out.println("Toni's age: " + toni.getAge() + "\n"); // 31 years old
-
+		
+		
+		
+		
+		
 	}
 
 	public static void testMethodsObjectsPerson() {
@@ -108,6 +116,8 @@ public class TestPerson {
 		printPeople(people);
 
 		// System.out.println(people.toString());
+		
+		System.out.println();
 
 	}
 	
@@ -122,17 +132,17 @@ public class TestPerson {
 		MyDate mondayMorning = new MyDate (4, 5, 2021);
 		Expense internetYoigoApril = new Expense ("Internet 200MB Yoigo", 30, mondayMorning);
 		
-		borja.expenses.add(internetYoigoApril);
+		borja.getExpenses().add(internetYoigoApril);
 		
 		MyDate lastSundayDate = new MyDate (14, 5 , 2021);
 		Expense lastSundayFun = new Expense ("Bar and drinks and friends",110, lastSundayDate);
 		
-		borja.expenses.add(lastSundayFun);
+		borja.getExpenses().add(lastSundayFun);
 		
 		MyDate lastSaturdayDate = new MyDate (14, 6 , 2021);
 		Expense lastSaturdayFun = new Expense ("Bar and drinks and friends",110, lastSaturdayDate);
 		
-		borja.expenses.add(lastSaturdayFun);
+		borja.getExpenses().add(lastSaturdayFun);
 		
 		//option B
 		
@@ -141,6 +151,37 @@ public class TestPerson {
 		
 		System.out.println("Expenses: " + borja.calculateExpenses(5));
 		
+		
+	}
+	
+	public static void testDisplacementPerson() {
+		
+		Location location1 = new Location("House", 123154, 132103);
+		
+		Location location2 = new Location("Park", 45416, 15564);
+		
+		MyDate date = new MyDate(9,3,79);
+		
+		Displacement displacement = new Displacement("Desplaçament 1", location1, location2, date);
+		
+		Expense expense = new Expense("Entrepà", 5, date);
+		
+		
+		
+		Person borja = new Person ( );
+		
+		borja.setAge(42);
+		borja.getExpenses().add (expense);
+		borja.getDisplacements().add(displacement);
+		
+		System.out.println(borja);
+		System.out.println(borja.getExpenses());
+		System.out.println(borja.getDisplacements());
+		
+		
+		
+		//public Person(String name, int age, int weigth, int heigth, double basicSalary, double money, int tobaccoPacket,
+			//	ArrayList<Expense> expenses, ArrayList<Displacement> displacements)
 		
 	}
 	// -------------------------------------------------------------------

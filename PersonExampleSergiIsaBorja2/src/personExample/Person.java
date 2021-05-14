@@ -19,6 +19,9 @@ public class Person {
 	
 	//Constructor from Person Class
 	public Person() {
+		this.expenses = new ArrayList<Expense>();
+		this.displacements = new ArrayList<Displacement>();
+		
 		
 	}
 
@@ -55,7 +58,7 @@ public class Person {
 
 	public Person(String name, int age, int weigth, int heigth, double basicSalary, double money, int tobaccoPacket,
 			ArrayList<Expense> expenses, ArrayList<Displacement> displacements) {
-		super();
+		
 		this.name = name;
 		this.age = age;
 		this.weigth = weigth;
@@ -76,6 +79,22 @@ public class Person {
 		
 	}
 	
+	public ArrayList<Displacement> getDisplacements() {
+		return displacements;
+	}
+
+	public void setDisplacements(ArrayList<Displacement> displacements) {
+		this.displacements = displacements;
+	}
+
+	public ArrayList<Expense> getExpenses() {
+		return expenses;
+	}
+
+	public void setExpenses(ArrayList<Expense> expenses) {
+		this.expenses = expenses;
+	}
+
 	public void becomeOlder () {
 		
 		this.age = age + 1;
@@ -210,12 +229,20 @@ public double calculateExpenses (int month) {
 		this.tobaccoPacket = tobaccoPacket;
 	}
 
-	//toString
 	@Override
 	public String toString() {
-		return "Person Fields: (name=" + name + ", age=" + age + ", weigth=" + weigth + ", heigth=" + heigth + ", basicSalary="
-				+ basicSalary + "money= " + money + "tobaccoPacket =" + tobaccoPacket + ")";
+		return "Person [name=" + name + ", age=" + age + ", weigth=" + weigth + ", heigth=" + heigth + ", basicSalary="
+				+ basicSalary + ", money=" + money + ", tobaccoPacket=" + tobaccoPacket + ", expenses=" + expenses
+				+ ", displacements=" + displacements + "]";
 	}
+
+	//toString
+	/*
+	 * @Override public String toString() { return "Person Fields: (name=" + name +
+	 * ", age=" + age + ", weigth=" + weigth + ", heigth=" + heigth +
+	 * ", basicSalary=" + basicSalary + "money= " + money + "tobaccoPacket =" +
+	 * tobaccoPacket + ")"; }
+	 */
 	
 	
 	

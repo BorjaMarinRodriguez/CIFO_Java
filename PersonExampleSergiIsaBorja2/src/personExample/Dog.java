@@ -32,6 +32,15 @@ public class Dog {
 	}
 	
 	
+	public static void attackDog (Dog dog1, Person person) {
+		
+			
+		System.out.println(dog1 + "descuartitza a " + person);
+		
+		
+	}
+	
+	
 
 
 	
@@ -89,7 +98,7 @@ public class Dog {
 	@Override
 	public String toString() {
 		
-		return "Dog Fields: (name=" + name + ", age=" + age + ", height=" + heigth + ", race=" + race + ", is PPP: " + isPPP;
+		return "Dog Fields: (name=" + name + ", age=" + age + ", height=" + heigth + ", race=" + race + ", is PPP: " + isPPP + "\n";
 	}
 	
 	
